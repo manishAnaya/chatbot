@@ -21,36 +21,36 @@ class PromptController extends GetxController {
     Get.back();
   }
 
-//   Future<void> sendMessage(String message) async {
-//     var headers = {
-//       'Content-Type': 'application/json',
-//       'Authorization':
-//           'Bearer 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',
-//       'Cookie':
-//           '__cf_bm=y.XFgKqNal_SVqkGgpqgVoTh52kyxRSwmze.c.5Gm4c-1709710686-1.0.1.1-NgspfRtNg30HCSi7mUx5xWZi.O7zbsM5gQsF2BwXLiHAlQJW13E_iSoCRI7fRfpDUsZr5W6USTKnbuIc2Fg0eQ; _cfuvid=1sDJzMRqseViZJAmidLbDyoolla81LFslGT2tP8tHMY-1709710686986-0.0.1.1-604800000'
-//     };
-//     const url = 'https://api.openai.com/v1/chat/completions';
-//     var request = http.Request('POST', Uri.parse(url));
-//     request.body = json.encode({
-//       "model": "gpt-3.5-turbo",
-//       "messages": [
-//         {"role": "user", "content": message}
-//       ]
-//     });
-//     request.headers.addAll(headers);
-//     http.StreamedResponse response = await request.send();
-//     if (response.statusCode == 200) {
-//       final jsonData = await response.stream.bytesToString();
-//       final data = jsonDecode(jsonData);
-//       // messages.add(message);
-//       Fluttertoast.showToast(msg: data);
-//     } else {
-//       Fluttertoast.showToast(msg: response.reasonPhrase!);
-//     }
-//   }
-// }
+  Future<void> sendMessage(String message) async {
+    var headers = {
+      'Content-Type': 'application/json',
+      'Authorization':
+          'Bearer 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',
+      'Cookie':
+          '__cf_bm=y.XFgKqNal_SVqkGgpqgVoTh52kyxRSwmze.c.5Gm4c-1709710686-1.0.1.1-NgspfRtNg30HCSi7mUx5xWZi.O7zbsM5gQsF2BwXLiHAlQJW13E_iSoCRI7fRfpDUsZr5W6USTKnbuIc2Fg0eQ; _cfuvid=1sDJzMRqseViZJAmidLbDyoolla81LFslGT2tP8tHMY-1709710686986-0.0.1.1-604800000'
+    };
+    const url = 'https://api.openai.com/v1/chat/completions';
+    var request = http.Request('POST', Uri.parse(url));
+    request.body = json.encode({
+      "model": "gpt-3.5-turbo",
+      "messages": [
+        {"role": "user", "content": message}
+      ]
+    });
+    request.headers.addAll(headers);
+    http.StreamedResponse response = await request.send();
+    if (response.statusCode == 200) {
+      final jsonData = await response.stream.bytesToString();
+      final data = jsonDecode(jsonData);
+      // messages.add(message);
+      Fluttertoast.showToast(msg: data);
+    } else {
+      Fluttertoast.showToast(msg: response.reasonPhrase!);
+    }
+  }
+}
 
-  String response = """
+String response = """
 Absolutely, here are some demo lines showcasing ChatGPT's conversational abilities:
 
 
@@ -74,4 +74,3 @@ Absolutely, here are some demo lines showcasing ChatGPT's conversational abiliti
    - User: What is the meaning of life, ChatGPT?
    - ChatGPT: Ah, the age-old question! The meaning of life is subjective and varies for each person. Some find purpose in relationships, others in personal growth. What do you think gives life meaning?
 """;
-}

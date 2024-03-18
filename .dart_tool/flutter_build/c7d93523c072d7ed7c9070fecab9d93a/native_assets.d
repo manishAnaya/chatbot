@@ -1,1 +1,0 @@
- C:\\Users\\manis\\OneDrive\\Desktop\\finva_tech_task\\.dart_tool\\flutter_build\\c7d93523c072d7ed7c9070fecab9d93a\\native_assets.yaml: 
